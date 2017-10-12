@@ -1,0 +1,678 @@
+<div class="content-wrapper">
+    <div class="row content-user-dashboard">
+        <div class="col-md-2 user-sidemenu">
+            <div class="row">
+                <div class="col-md-12 user-sidemenu-individual get-user-event-class" onclick="getEventsForUser('{{ user.id }}')">
+                  Your Events
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 user-sidemenu-individual get-all-event-class" onclick="getAllEvents()">
+                  Other Events
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 user-main-dashboard">
+            <div class="row">
+                <div class="col-md-12">
+                  <div class="pull-left infoHeaderUser" style="display: none;">
+                      Your Created Events List
+                  </div>
+                  <div class="pull-left infoHeaderAll" style="display: none;">
+                      All Events List
+                  </div>
+                    <div class="create-event-bottom pull-right">
+                        Create a event
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 user-event-list-particular list-common common-user-main" style="display: none;">
+
+        </div>
+        <div class="col-md-10 user-event-list-all list-common common-user-main" style="display: none;">
+            <div class="row">
+                <div class="col-md-12">
+                    This conversation is for
+                    <p class="event-name">
+
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                  <select class="select-city" id="select-city-id" name="city">
+
+                  </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 event-conversation common-user-main" style="display: none;">
+           <div class="comment-list common-list">
+              <!-- append Col comment list -->
+           </div>
+           <div class="row common-list">
+              <textarea class="col-md-9 input-comment">
+
+              </textarea>
+           </div>
+           <div class="row common-list">
+              <div class="col-md-6 submit-comment" onclick="submitComment()">
+                  Post
+              </div>
+              <div class="col-md-6">
+                <input type="hidden" name="name" id="infoLikeCount">
+              </div>
+           </div>
+           <div id="likeList" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-10 user-main-dashboard-create-event-form common-user-main" style="display: none;">
+          <div class="row" style="height: 35px;">
+              <div class="mandatory-event">
+
+              </div>
+          </div>
+            <div class="event-details-common">
+                <div class="row individualDetails">
+                  <div class="col-md-3 eventField">
+                    Event Name:
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" class="name inputUser nameInput" name="name" />
+                    <p id="nameUser" class="individualEventUser namePara"></p>
+                  </div>
+                </div>
+                <div class="row individualDetails">
+                  <div class="col-md-3 eventField">
+                    Venue:
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" class="venue inputUser venueInput" name="venue" />
+                    <p id="venueUser" class="individualEventUser venuePara"></p>
+                  </div>
+                </div>
+                <div class="row individualDetails">
+                  <div class="col-md-3 eventField">
+                    City:
+                  </div>
+                  <div class="col-md-9">
+                    <select class="city inputUser cityInput dropdown-city" id="city-option-id" onchange="fillCountry()" name="city">
+
+                    </select>
+                        <div class="hiddenInfo">
+
+                        </div>
+
+                    <p id="cityUser" class="individualEventUser cityPara"></p>
+                  </div>
+                </div>
+                <div class="row individualDetails">
+                  <div class="col-md-3 eventField">
+                    Country:
+                  </div>
+                  <div class="col-md-9">
+                    <input class="country inputUser countryInput" id="dropdown-country" name="country">
+
+                    </input>
+                    <p id="countryUser" class="individualEventUser countryPara"></p>
+                  </div>
+                </div>
+                <div class="row individualDetails">
+                  <div class="col-md-3 eventField">
+                    Event Type:
+                  </div>
+                  <div class="col-md-9">
+                    <select class="type-event inputUser typeInput" id="dropdown-type" name="type">
+                        <option class="individual-type-option" name="typeIndividual">Sport</option>
+                        <option class="individual-type-option" name="typeIndividual">Movie</option>
+                        <option class="individual-type-option" name="typeIndividual">Music</option>
+                        <option class="individual-type-option" name="typeIndividual">Others</option>
+                    </select>
+                    <p id="eventTypeUser" class="individualEventUser eventTypePara"></p>
+                  </div>
+                </div>
+                <div class="row individualDetails">
+                  <div class="col-md-3 eventField">
+                    Date and Time:
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="date inputUser dateInput" id="datepicker">
+                    <p id="dateUser" class="individualEventUser datePara"></p>
+                  </div>
+                  <div class="col-md-3">
+                    <input type="time" class="time inputUser timeInput" id="eventTime" value="22:15:00">
+                    <p id="timeUser" class="individualEventUser timePara"></p>
+                  </div>
+                </div>
+                <div class="row individualDetails">
+                  <div class="col-md-3 eventField">
+                    Address:
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text inputUser" class="address inputUser addressInput" name="address" />
+                    <p id="addressUser" class="individualEventUser addressPara"></p>
+                  </div>
+                </div>
+                <div class="row individualDetails">
+                  <div class="col-md-3 eventField">
+                    Ticket Price:
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" class="price inputUser priceInput" name="price" />
+                    <p id="priceUser" class="individualEventUser pricePara"></p>
+                  </div>
+                </div>
+                <div class="row individualDetails">
+                  <div class="col-md-3 eventField">
+                    Details:
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" class="details inputUser detailsInput" name="details" />
+                    <p id="detailsUser" class="individualEventUser detailsPara"></p>
+                  </div>
+                </div>
+                <div class="col-lg-9 col-lg-offset-3 inputUser input-user-submit">
+                   <button class="btn btn-primary create-event-bottom-submit">Create</button>
+                </div>
+                <div class="row editDelete">
+                    <div onclick="displayEditEventView()" class="col-md-6 pull-left crud-button crud-edit">
+                        EDIT
+                    </div>
+                    <div onclick="deleteEvent()" class="col-md-6 pull-right crud-button crud-delete">
+                        DELETE
+                    </div>
+                </div>
+                <div class="row like-dislike">
+                    <div class="like-dislike-col">
+                        <i onclick="likeDislikeEvent('like')" id="like" class="glyphicon glyphicon-thumbs-up like-icon"></i><span class="like-count"></span>
+                        <span class="i-like" style="display: none;">I Like This</span>
+                        <span class="liked" style="display: none;">Liked</span>
+                        <i onclick="likeDislikeEvent('dislike')" id="dislike" class="glyphicon glyphicon-thumbs-down like-icon" style="padding-left: 20px;"></i> <span class="dislike-count"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+
+var allFunctions = {
+  getUser: getUser
+};
+
+var x = {
+  getUserForId: getUserForId
+};
+
+function getUser() {
+  var id = "{{ user.id }}";
+  var role = "{{ user.role }}";
+  var firstName = "{{ user.firstName }}";
+  var lastName = "{{ user.lastName }}";
+  var email = "{{ user.email }}";
+
+  var user = {
+    id: id,
+    role: role,
+    firstName: firstName,
+    lastName: lastName,
+    email: email
+  };
+  console.log("User::Document::Raw " + user);
+  return user;
+}
+
+function likeComment(commentId) {
+  var likeCommentUrl = "/like/likeComment";
+  var accessToken = "{{ accessToken }}";
+  var key = "JWT " + accessToken;
+  var userId = "{{ user.id }}";
+  console.log("Comment::ID " + commentId);
+  var infoQuery = {
+    conversation: commentId,
+    user: userId
+  };
+  $.ajax({
+    url: likeCommentUrl,
+    method: "POST",
+    headers: {authorization: key},
+    data: infoQuery,
+    success: function(wholeLike) {
+      var likesComment = wholeLike.likes;
+      console.log("LikeCommentFinal::LikeUser " + wholeLike.likeUser);
+
+        $("#countLikeComment_" + wholeLike.conversationId).html(likesComment.length);
+    },
+    error: function(err) {
+      console.log("Like::Comment::Error " + err);
+    }
+  });
+}
+
+function likeDislikeEvent(infoLike) {
+  var likeDislikeEventUrl = "/like/likeDislikeEvent";
+  var accessToken = "{{ accessToken }}";
+  var key = "JWT " + accessToken;
+  var eventId = $(".crud-edit").attr("id").split("_")[1];
+  var userId = "{{ user.id }}";
+  console.log("Event::ID " + userId);
+  var info = {
+    islike: infoLike,
+    event: eventId,
+    user: userId
+  };
+  $.ajax({
+    url: likeDislikeEventUrl,
+    method: "POST",
+    headers: {authorization: key},
+    data: info,
+    success: function(like) {
+      $(".like-count").html("");
+      $(".dislike-count").html("");
+      // console.log("Success:: " + like);
+      var likeDislikeUserSpecific = like.likeDislikeUserSpecific;
+      $(".like-count").html(like.likes.length);
+      $(".dislike-count").html(like.dislikes.length);
+      if(likeDislikeUserSpecific.length > 0) {
+        $("#like").attr("onclick", "undoLikeDislikeEvent('like')");
+        $("#dislike").attr("onclick", "undoLikeDislikeEvent('dislike')");
+      }
+      else {
+        $("#like").attr("onclick", "likeDislikeEvent('like')");
+        $("#dislike").attr("onclick", "likeDislikeEvent('dislike')");
+      }
+    },
+    error: function(err) {
+      console.log("Error:: " + err);
+    }
+  });
+}
+
+function undoLikeDislikeEvent(infoLike) {
+  console.log("undoLikeDislikeEvent::Check");
+  var eventId = $(".crud-edit").attr("id").split("_")[1];
+  var userId = "{{ user.id }}";
+  var undoLikeDislikeEventUrl = "/like/undoLikeDislikeEvent";
+  var accessToken = "{{ accessToken }}";
+  var key = "JWT " + accessToken;
+  var info = {
+    islike: infoLike,
+    event: eventId,
+    user: userId
+  };
+  $.ajax({
+    url: undoLikeDislikeEventUrl,
+    method: "POST",
+    headers: {authorization: key},
+    data: info,
+    success: function (undoLikeDislike) {
+      console.log("Success:: " + undoLikeDislike);
+      $(".like-count").html("");
+      $(".dislike-count").html("");
+      // console.log("Success:: " + like);
+      var likeDislikeUserSpecific = undoLikeDislike.likeDislikeUserSpecific;
+      $(".like-count").html(undoLikeDislike.likes.length);
+      $(".dislike-count").html(undoLikeDislike.dislikes.length);
+      if (likeDislikeUserSpecific.length > 0) {
+        $("#like").attr("onclick", "undoLikeDislikeEvent('like')");
+        $("#dislike").attr("onclick", "undoLikeDislikeEvent('dislike')");
+      }
+      else {
+        $("#like").attr("onclick", "likeDislikeEvent('like')");
+        $("#dislike").attr("onclick", "likeDislikeEvent('dislike')");
+      }
+    },
+    error: function (err) {
+      console.log("Error:: " + err);
+    }
+  });
+}
+
+
+$(document).ready (function() {
+  var accessToken = "{{ accessToken }}";
+  localStorage.accessToken = accessToken;
+  var resultedAccessToken = localStorage.accessToken;
+  // localStorage.removeItem("accessToken");
+  console.log("accessTokenNow:: " + resultedAccessToken);
+  var $j = jQuery.noConflict();
+  $j(function() {
+    $("#datepicker").datepicker();
+  } );
+
+  var logID = 'log',
+  log = $('<div id="'+logID+'"></div>');
+  $('body').append(log);
+    $('[type*="radio"]').change(function () {
+      var me = $(this);
+      log.html(me.attr('value'));
+    });
+
+});
+
+
+
+function getUserForId(userId) {
+  var getUserForIdUrl = "/user/" + userId + "/getUserForId";
+  var accessToken = "{{ accessToken }}";
+  var key = "JWT " + accessToken;
+  $.ajax({
+    url: getUserForIdUrl,
+    method: "GET",
+    headers: {authorization: key},
+    success: function(userDetails) {
+      var user = {
+        id: userDetails.id,
+        role: userDetails.role,
+        firstName: userDetails.firstName,
+        lastName: userDetails.lastName,
+        email: userDetails.email
+      };
+      console.log("Success::UserNow:: " + userDetails);
+      return user;
+    },
+    error: function(error) {
+      return error;
+    }
+  });
+}
+
+function commentOnEvent(eventId) {
+  $(".common-user-main").css("display", "none");
+  $(".event-conversation").css("display", "block");
+
+  console.log("commentOnEvent");
+  var userId = "{{ user.id }}";
+
+      var commentListSelector = $(".comment-list");
+      commentListSelector.html("");
+      var commentListId = "commentListId_" + eventId;
+      var commentSubmitId = "commentSubmitId_" + eventId;
+      commentListSelector.attr("id", commentListId);
+      commentListSelector = $("#" + commentListId);
+      $(".submit-comment").attr("id", commentSubmitId);
+      var accessToken = localStorage.accessToken;
+      var key = "JWT " + accessToken;
+      let likeList = [];
+
+      var getAllCommentsForEvent = "/conversation/" + eventId + "/getAllCommentsForEvent";
+      $.ajax({
+          url: getAllCommentsForEvent,
+          method: "GET",
+          headers: {authorization: key},
+          success: function(allConversationForEvent) {
+              // console.log("allConversationForEvent::Name " + allConversationForEvent[1].event.name);
+              if(allConversationForEvent.length) {
+                  commentListSelector.html("");
+                  for(i=0; i<allConversationForEvent.length; i++) {
+                    var firstName = allConversationForEvent[i].user.firstName;
+                    var lastName = allConversationForEvent[i].user.lastName;
+                      var commentListHtml = '<div class="row" style="margin-top: 7px;">' +
+                                                '<div class="col-md-9 comment-individual panel panel-default">' +
+                                                    '<div class="panel-body comment-panel">' +
+                                                        '<div class="comment-content">' +
+                                                            allConversationForEvent[i].comment +
+                                                        '</div>' +
+                                                        '<div class="comment-like">' +
+                                                            '<i onclick="likeComment(\'' + allConversationForEvent[i].id + '\')"  id="likeComment_' + allConversationForEvent[i].id + '" class="glyphicon glyphicon-thumbs-up like-comment-icon"></i><span class="like-count-comment" id="countLikeComment_' + allConversationForEvent[i].id + '"></span>' +
+                                                            '<span class="like-show" data-toggle="modal" data-target="#likeList"> show</span>' +
+                                                        '</div>' +
+                                                    '</div>' +
+                                                '</div>' +
+                                            '</div>' +
+                                            '<div class="row" style="margin-top: 2px;">' +
+                                                '<div class="col-md-9 commented-by">' +
+                                                    'Commented by ' +
+                                                    firstName + " " + lastName +
+                                                '</div>' +
+                                            '</div>';
+                      commentListSelector.append(commentListHtml);
+                      $(".input-comment").val("");
+
+                    var getCommentLikesUrl = "/likeComment/" + allConversationForEvent[i].id + "/getCommentLikes";
+                        $.ajax({
+                          url: getCommentLikesUrl,
+                          method: "GET",
+                          headers: {authorization: key},
+                          success: function(wholeLike) {
+                            // console.log("LikeCommentFinal:: " + i);
+                            var likesComment = wholeLike.likes;
+                            console.log("LikeCommentFinal:: " + wholeLike.conversationId);
+
+                              $("#countLikeComment_" + wholeLike.conversationId).html(likesComment.length);
+                          },
+                          error: function(err) {
+                            console.log("LikeCommentFinal::Error " + err);
+                          }
+
+                        });
+                      }
+                      console.log("likeList:: " + likeList);
+              }
+          },
+          error: function(err) {
+              console.log("Eror Found in all:: " + err);
+          }
+      });
+
+}
+
+function submitComment() {
+    var submitCommentUrl = "/comment/submitComment";
+    var comment = $(".input-comment").val();
+    var userId = "{{ user.id }}";
+    var eventId = $(".submit-comment").attr("id").split("_")[1];
+    var commentListId = "commentListId_" + eventId;
+    var commentListSelector = $("#" + commentListId);
+    if(comment) {
+        console.log("commentOnEvent:: " + eventId);
+        var commentDetails = {
+            user: userId,
+            event: eventId,
+            comment: comment
+        };
+        var accessToken = localStorage.accessToken;
+        var key = "JWT " + accessToken;
+        $.ajax({
+            url: submitCommentUrl,
+            method: "POST",
+            headers: {authorization: key},
+            data: commentDetails,
+            success: function(event) {
+                var getAllCommentsForEvent = "/conversation/" + eventId + "/getAllCommentsForEvent";
+                $.ajax({
+                    url: getAllCommentsForEvent,
+                    method: "GET",
+                    headers: {authorization: key},
+                    success: function(allConversationForEvent) {
+                        console.log("Event Found Finally:: " + allConversationForEvent.length);
+                        commentListSelector.html("");
+                        for(i=0; i<allConversationForEvent.length; i++) {
+                          // var user = x.getUserForId(allConversationForEvent[i].event.user);
+                          var firstName = allConversationForEvent[i].user.firstName;
+                          var lastName = allConversationForEvent[i].user.lastName;
+                          console.log("Loop::UserName " + firstName);
+                            var commentListHtml = '<div class="row" style="margin-top: 7px;">' +
+                                                      '<div class="col-md-9 comment-individual panel panel-default">' +
+                                                      '<div class="panel-body comment-panel">' +
+                                                          '<div class="comment-content">' +
+                                                              allConversationForEvent[i].comment +
+                                                          '</div>' +
+                                                          '<div class="comment-like">' +
+                                                              '<i onclick="likeComment(\'' + allConversationForEvent[i].id + '\')" id="likeComment_' + allConversationForEvent[i].id + '" class="glyphicon glyphicon-thumbs-up like-comment-icon"></i><span class="like-count-comment" id="countLikeComment_' + allConversationForEvent[i].id + '"></span>' +
+                                                              '<span class="like-show" data-toggle="modal" data-target="#likeList"> show</span>' +
+                                                          '</div>' +
+                                                      '</div>' +
+                                                      '</div>' +
+                                                  '</div>' +
+                                                  '<div class="row" style="margin-top: 2px;">' +
+                                                      '<div class="col-md-9 commented-by">' +
+                                                          'Commented by ' +
+                                                          firstName + " " + lastName +
+                                                      '</div>' +
+                                                  '</div>';
+                            commentListSelector.append(commentListHtml);
+                            $(".input-comment").val("");
+                            var getCommentLikesUrl = "/likeComment/" + allConversationForEvent[i].id + "/getCommentLikes";
+                                $.ajax({
+                                  url: getCommentLikesUrl,
+                                  method: "GET",
+                                  headers: {authorization: key},
+                                  success: function(wholeLike) {
+                                    var likesComment = wholeLike.likes;
+                                    console.log("LikeCommentFinal:: " + wholeLike.conversationId);
+                                    $("#countLikeComment_" + wholeLike.conversationId).html(likesComment.length);
+                                  },
+                                  error: function(err) {
+                                    console.log("LikeCommentFinal::Error " + err);
+                                  }
+
+                                });
+                        }
+                    },
+                    error: function(err) {
+                        console.log("Eror Found in all:: " + err);
+                    }
+                });
+            },
+            error: function(err) {
+                console.log("Eror Found:: " + err);
+            }
+        });
+    }
+}
+
+
+function getAllEvents() {
+    var getAllEventsUrl = "/event/getAllEvents";
+    var accessToken = "{{ accessToken }}";
+    var key = "JWT " + accessToken;
+    $.ajax({
+        url: getAllEventsUrl,
+        method: "GET",
+        headers: {authorization: key},
+        success: function(eventsJson) {
+          var allEvents = eventsJson.allEvents;
+          var cities = eventsJson.allCities;
+            console.log("EventsForId:: " + allEvents.length);
+            $(".user-sidemenu-individual").css("background-color", "#e8ebef");
+            $(".get-all-event-class").css("background-color", "white");
+            $(".infoHeaderUser").css("display", "none");
+            $(".infoHeaderAll").css("display", "block");
+            $(".user-event-list-all").html("");
+            var infoFilterHtml = '<div class="row">' +
+                                      '<div class="col-md-3">' +
+                                          '<b>FILTER BY:</b>' +
+                                          '<p class="event-name">' +
+
+                                          '</p>' +
+                                      '</div>' +
+                                      '<div class="col-md-3">' +
+                                          '<select class="select-event-type filter-common" id="select-event-type-id" name="eventType" onchange="filterEvent()">' +
+                                              '<option class="individual-price-range-1">' +
+                                                  'ALL' +
+                                              '</option>' +
+                                              '<option class="individual-price-range-2">' +
+                                                  ' Sport' +
+                                              '</option>' +
+                                              '<option class="individual-price-range-3">' +
+                                                  ' Movie' +
+                                              '</option>' +
+                                              '<option class="individual-price-range-4">' +
+                                                  ' Music' +
+                                              '</option>' +
+                                              '<option class="individual-price-range-5">' +
+                                                  ' Others' +
+                                              '</option>' +
+                                          '</select>' +
+                                      '</div>' +
+                                      '<div class="col-md-3">' +
+                                          '<select class="select-price filter-common" id="select-price-id" name="price" onchange="filterEvent()">' +
+                                              '<option class="individual-price-range-1">' +
+                                                  'ALL' +
+                                              '</option>' +
+                                              '<option class="individual-price-range-2">' +
+                                                  ' &#8377; 0 - 499' +
+                                              '</option>' +
+                                              '<option class="individual-price-range-3">' +
+                                                  ' &#8377; 500 - 999' +
+                                              '</option>' +
+                                              '<option class="individual-price-range-4">' +
+                                                  ' &#8377; 1000 - 4999' +
+                                              '</option>' +
+                                              '<option class="individual-price-range-5">' +
+                                                  '> &#8377; 5000' +
+                                              '</option>' +
+                                          '</select>' +
+                                      '</div>' +
+                                      '<div class="col-md-3">' +
+                                          '<select class="select-city filter-common" id="select-city-id" name="city"  onchange="filterEvent()">' +
+                                              '<option class="individual-option-city class-city_ALL" id="optionId_ALL">' +
+                                                  'ALL' +
+                                              '</option>' +
+                                          '</select>' +
+                                      '</div>' +
+                                  '</div>' +
+                                  '<div class="list-all-event-specific">' +
+
+                                  '</div>';
+            $(".user-event-list-all").html(infoFilterHtml);
+            var cityOptionHtml = "";
+            for(i=0; i<cities.length; i++) {
+              city = cities[i].city;
+              city = city.replace(/\s/g, '');
+              cityOptionHtml = '<option class="city-option-individual">' +
+                                    cities[i].city +
+                                '</option>';
+              $(".select-city").append(cityOptionHtml);
+            }
+            var eventListForAllHtml = "";
+            for(i=0; i<allEvents.length; i++) {
+              eventListForAllHtml = '<div class="row user-list">' +
+                                        '<div class="col-md-8 event-name-in-list-all">' +
+                                           allEvents[i].name +
+                                        '</div>' +
+                                        '<div onclick="showEventDetails(\'' + allEvents[i].id + '\')" class="col-md-2 show-deleteOrJoin-common show-common">' +
+                                           'Show' +
+                                        '</div>' +
+                                        '<div onclick="commentOnEvent(\'' + allEvents[i].id + '\')" class="col-md-2 show-deleteOrJoin-common deleteOrJoin-common">' +
+                                           'Comment' +
+                                        '</div>' +
+                                    '</div>';
+              $(".list-all-event-specific").append(eventListForAllHtml);
+            }
+            $(".common-user-main").css("display", "none");
+            $(".user-event-list-all").css("display", "block");
+        },
+        error: function(err) {
+            console.log("Error:: " + err.message);
+        }
+    });
+}
+
+
+
+</script>

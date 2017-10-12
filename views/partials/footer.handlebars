@@ -1,0 +1,81 @@
+<footer class="footer-class">
+    <div class="row footer-div">
+        <div class="footer-body" id="contactForm">
+            <div class="row">
+                <div class="mandatory-contact">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="success-message">
+
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                  <input class="contact-input-name contact-input-common" style="margin-left: 25px;" name="name" placeholder="Name">
+               </div>
+               <div class="col-md-6">
+                 <input class="contact-input-phone contact-input-common" style="margin-left: 9px;" name="phone" placeholder="Phone">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <input class="contact-input-email contact-input-common" type="email" style="width: 93%; margin-left: 25px;" name="email" placeholder="example@gmail.com">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <textarea class="contact-input-message contact-input-common" style="width: 93%; margin-left: 25px;" name="message" placeholder="Write something..."></textarea>
+               </div>
+            </div>
+            <div class="row">
+               <div class="contact-submit" onclick="createContact(event)">
+                  CONNECT WITH US
+               </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function createContact(e) {
+      var createContactUrl = "/contact/createContact";
+      var name = $(".contact-input-name").val();
+      var phone = $(".contact-input-phone").val();
+      var email = $(".contact-input-email").val();
+      var message = $(".contact-input-message").val();
+
+      if(name && phone && email && message) {
+          console.log("contact-input-common:: " + name);
+          $(".mandatory-contact").html("");
+          var contactDetails = {
+            name: name,
+            phone: phone,
+            email: email,
+            message: message
+          };
+
+          $.ajax({
+            url: createContactUrl,
+            method: "POST",
+            data: contactDetails,
+            success: function(response) {
+              console.log("Success:: " + response.name);
+              var successHtml = "Message sent successfully!"
+              $(".contact-input-common").val("");
+              $(".success-message").html(successHtml);
+            },
+            error: function(error) {
+              console.log("Error:: " + error.message);
+            }
+          });
+      }
+      else {
+          e.preventDefault();
+          $(".success-message").val("");
+          var mandatoryHtml = "All fields are mandatory";
+          $(".mandatory-contact").html(mandatoryHtml);
+      }
+    }
+</script>

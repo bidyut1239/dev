@@ -1,0 +1,622 @@
+
+body {
+  background-color: #e8ebef;
+}
+
+.common-user-main {
+  background-color: white;
+}
+
+.navbar {
+  background-color: #e8ebef;
+}
+
+.defaultForm{
+  height: 600px;
+  border: 1px solid black;
+}
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+
+  padding: 0px;
+  margin: 0px;
+}
+
+div {
+  padding: 0px;
+  margin: 0px;
+}
+
+.red {
+  /*border: 1px solid red;*/
+  /*border: 1px solid green;*/
+  /*height: 400px;*/
+}
+
+.row {
+  padding: 0px;
+  margin: 0px;
+}
+
+.login-button {
+  background: none !important;
+  color: blue;
+  border: none;
+  padding: 0! important;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit !important;
+  margin-top: 15px;
+}
+
+/*-----------------------------Admin Dashboard--------------------------------*/
+
+.common-admin-main {
+  background-color: white;
+  min-height: 500px;
+}
+
+.adminDashboard {
+  min-height: 500px;
+  /*max-height: 500px;*/
+}
+
+.admin-dashboard-sidemenu {
+  min-height: 500px;
+  background-color: #e8ebef;
+}
+
+.list-sidemenu {
+  height: 40px;
+  background-color: #e8ebef;
+  padding: 0px;
+  margin: 0px;
+  font-size: 15px;
+  padding-left: 20px;
+  padding-top: 10px;
+  border-bottom: 1px solid #5e636b;
+}
+
+.list-sidemenu:hover {
+  cursor: pointer;
+}
+
+.logout-class {
+  padding-top: 15px;
+  color: #337ab7;
+}
+
+.user-list {
+  height: 50px;
+  max-height: 500px;
+}
+
+.showDelete {
+  height: 35px;
+  width: 70px;
+  color: white;
+  text-align: center;
+  padding-top: 7px;
+}
+
+.showDelete:hover {
+  cursor: pointer;
+}
+.user-list-individual {
+  padding-left: 25px;
+  padding-top: 7px;
+  text-transform:capitalize;
+}
+
+.show {
+  background-color: #104ac9;
+}
+
+.delete {
+  background-color: #ed2323;
+}
+
+.admin-dashboard-main-all-user {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+/*------------------------------------City------------------------------------*/
+
+@media (min-width: 992px) {
+  .create-city-form-content {
+    margin-left: 25%;
+    width: 50%;
+  }
+}
+
+@media (max-width: 992px) {
+  .create-city-form-content {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .city-list {
+    margin-left: 20%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  .city-list {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .city-headline {
+    margin-left: 20%;
+    width: 60%;
+  }
+}
+
+.city-headline {
+  font-weight: bold;
+  height: 40px;
+}
+
+@media (max-width: 992px) {
+  .city-headline {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.dropdown-city {
+  background-color: white;
+}
+
+.individual-option-city {
+  height: 40px;
+}
+
+.input-country-city {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+.input-country-city:focus {
+  outline: none;
+  border-bottom: 1px solid blue;
+}
+
+.input-city-row {
+  height: 40px;
+  margin-top: 7px;
+}
+
+.create-city-headline {
+  height: 60px;
+}
+
+.create-city-bottom {
+  background-color: blue;
+  height: 25px;
+  width: 120px;
+  text-align: center;
+  /*border-radius: 5px;*/
+  color: white;
+  padding-left: 3px;
+  padding-top: 2px;
+  margin-right: 5px;
+}
+
+.create-city-bottom:hover {
+  cursor: pointer;
+}
+
+.create-city-submit {
+  width: 75px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.create-city-submit {
+  cursor: pointer;
+}
+
+.delete-city-bottom {
+  height: 30px;
+  width: 75px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.delete-city-bottom:hover {
+  cursor: pointer;
+}
+
+.city-list-content {
+  margin-top: 7px;
+}
+
+/*------------------------------User Dashboard--------------------------------*/
+
+.show-common {
+  background-color: #104ac9;
+}
+
+.deleteOrJoin-common {
+  background-color: #ed2323;
+}
+
+.show-deleteOrJoin-common {
+  cursor: pointer;
+  height: 25px;
+  width: 90px;
+  text-align: center;
+  padding-top: 2px;
+  color: white;
+}
+
+.list-common {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.common-user-main {
+  min-height: 500px;
+  /*border: 1px solid red;*/
+}
+
+.user-sidemenu {
+  background-color: #e8ebef;
+  min-height: 500px;
+  margin-top: 25px;
+}
+
+.user-sidemenu-individual {
+  background-color: #e8ebef;
+  border-bottom: 1px solid #5e636b;
+  height: 40px;
+  padding-left: 25px;
+  padding-top: 7px;
+  text-transform:capitalize;
+}
+.user-sidemenu-individual:hover {
+  cursor: pointer;
+}
+
+.create-event-bottom {
+  background-color: blue;
+  height: 25px;
+  width: 100px;
+  /*border-radius: 5px;*/
+  color: white;
+  padding-left: 3px;
+  padding-top: 2px;
+  margin-right:10px;
+}
+
+.create-event-bottom:hover {
+    cursor: pointer;
+}
+
+.individualEventUser {
+  display: none;
+  height: 40px;
+  padding-top: 15px;
+}
+
+.list-all-event-specific {
+  margin-top:40px;
+}
+
+.type-event {
+  background-color: white;
+}
+
+#like, #dislike:hover {
+  cursor: pointer;
+}
+
+.like-icon {
+  font-size: 20px;
+}
+
+.like-count, .dislike-count {
+  font-size: 15px;
+  padding-bottom: 3px;
+  position: absolute;
+  padding-left: 5px;
+}
+
+.like-dislike {
+  margin-bottom: 40px
+}
+
+.i-like, .liked {
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  color: white;
+  border-radius: 5px;
+  background-color: #444354;
+  margin-top: 25px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+#dislike {
+  color: #ef5151;
+}
+
+#like {
+  color: #a3e804;
+}
+
+/*----------------------------event comment-----------------------------------*/
+
+.submit-comment {
+  height: 30px;
+  width: 60px;
+  background-color: #104ac9;
+  color: white;
+  padding-top: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.submit-comment:hover {
+  cursor: pointer
+}
+
+.commented-by {
+  height: 10px;
+  font-size: 10px;
+  color: grey;
+}
+
+@media (min-width: 992px) {
+  .common-list {
+    margin-left: 20%;
+  }
+
+.common-list {
+  padding-top: 7px;
+}
+
+}
+
+.filter-common {
+  width: 80%;
+  height: 25px;
+  background-color: white;
+}
+
+.comment-content {
+  width: 85%;
+  padding-left: 10px;
+}
+
+.comment-like {
+  width: 15%;
+}
+
+.comment-panel {
+  display: inline-flex;
+  width: 100%;
+  padding: 0px;
+  padding-bottom: 15px;
+}
+
+.like-show {
+  color: grey;
+}
+
+.like-show:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.like-comment-icon {
+  color: #a3e804;
+}
+
+.like-comment-icon:hover {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/*----------------------------show Event Details------------------------------*/
+@media (min-width: 992px) {
+  .event-details-common {
+    margin-left: 25%;
+    width: 50%;
+  }
+}
+
+.event-details-common {
+  /*border: 1px solid #505459;*/
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.crud-button {
+  width: 80px;
+  height: 40px;
+  color: white;
+  text-align: center;
+  padding-top: 9px;
+}
+
+.crud-button:hover {
+  cursor: pointer;
+}
+
+.crud-edit {
+  background-color: blue;
+}
+.crud-delete {
+  background-color: red;
+}
+
+.inputUser {
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #a3acb7;
+}
+
+.inputUser:focus {
+  outline: none;
+  border-bottom: 2px solid blue;
+}
+
+.individualDetails {
+  height: 50px;
+  padding-top: 5px;
+}
+
+.eventField {
+  padding-top: 15px;
+  font-weight: bold;
+}
+
+.editDelete {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.mandatory-event, .mandatory-contact {
+  color: red;
+  font-size: 12px;
+  text-align: center;
+}
+
+.success-message {
+  color: ##60f237;
+  font-size: 12px;
+  text-align: center;
+}
+
+/*----------------------------------footer------------------------------------*/
+
+@media (min-width: 992px) {
+  .footer-body {
+    margin-left: 20%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  .contact-submit {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .contact-submit {
+    margin-left: 40%;
+    width: 20%;
+  }
+}
+
+.contact-submit {
+  border: 5px solid #cc083c;
+  background: transparent;
+  color: white;
+  text-align: center;
+  height: 40px;
+  padding-top: 5px;
+  margin-top: 15px;
+}
+
+.contact-submit:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .footer-body {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.footer-body {
+  margin-top: 60px;
+  margin-bottom: 60px
+}
+
+.footer-class {
+  background-color: #2E213C;
+}
+
+.contact-input-common {
+  background-color: #3E304C;
+  color: #6D6773;
+  border: none;
+  padding: 0px;
+  margin-top: 25px;
+  width: 90%;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.contact-input-common:focus {
+    border: none;
+}
+
+.contact-input-message {
+  height: 100px;
+  padding: 10px 1%;
+  resize: none;
+
+}
+/*-----------------------------Contact Details--------------------------------*/
+@media (min-width: 992px) {
+  .contact-details-content {
+    margin-left: 25%;
+    width: 50%;
+  }
+}
+
+@media (max-width: 992px) {
+  .contact-details-content {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.contact-details-content {
+  margin-top: 60px;
+  /*padding-top: 50px;
+  padding-bottom: 50px;*/
+  /*border: 1px solid #414751;*/
+}
+
+.contact-info {
+  height: 40px;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  font-size: 30px;
+}
+.rating > span:hover {
+  cursor: pointer;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}

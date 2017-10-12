@@ -1,0 +1,490 @@
+<div class="adminDashboard">
+    <div class="row">
+            <!-- Side Menu -->
+            <div class="col-md-2 admin-dashboard-sidemenu">
+                <div class="row">
+                    <div class="col-md-12 list-sidemenu admin-sidemenu-user" onclick="showAllUsers()">
+                        User
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 list-sidemenu admin-sidemenu-event" onclick="getAllEvents()">
+                        Event
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 list-sidemenu admin-sidemenu-cities" onclick="getAllCities()">
+                        City
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 list-sidemenu admin-sidemenu-countries" onclick="getAllCountries()">
+                        Country
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 list-sidemenu admin-sidemenu-contact" onclick="getAllContacts()">
+                        Contact
+                    </div>
+                </div>
+            </div>
+
+            <!-- All User -->
+            <div class="col-md-10 admin-dashboard-main admin-dashboard-main-all-user common-admin-main">
+
+            </div>
+
+            <!-- All Event -->
+            <div class="col-md-10 admin-dashboard-main user-event-list-all list-common common-admin-main" style="display: none;">
+
+            </div>
+
+            <!-- All Cities -->
+            <div class="col-md-10 admin-dashboard-main admin-dashboard-main-all-cities  list-common common-admin-main" style="display: none;">
+                <div class="row">
+                    <div class="col-md-12 pull-right create-city-bottom" onclick="displayCityForm()">
+                        Create New City
+                    </div>
+                </div>
+                <div class="row city-headline">
+                    <div class="col-md-4 all-cities-list-city list-city-common">
+                       City
+                    </div>
+                    <div class="col-md-4 all-cities-list-country list-city-common">
+                       Country
+                    </div>
+                </div>
+                <div class="city-list">
+
+                </div>
+            </div>
+
+            <!-- Create City Form -->
+            <div class="col-md-10 admin-dashboard-main admin-dashboard-main-create-city-form  list-common common-admin-main" style="display: none;">
+                <div class="row">
+                    <div class="col-md-12 create-city-headline">
+
+                    </div>
+                </div>
+                <div class="create-city-form-content">
+                    <div class="row input-city-row">
+                        <div class="col-md-3">
+                            City:
+                        </div>
+                        <div class="col-md-9">
+                            <input class="input-city-name input-country-city" name="name" placeholder="Bangalore">
+                        </div>
+                    </div>
+                    <div class="row input-city-row">
+                        <div class="col-md-3">
+                            Country:
+                        </div>
+                        <div class="col-md-9">
+                            <input class="input-city-country input-country-city" name="cityCountry" placeholder="India">
+                        </div>
+                    </div>
+                    <div class="row input-city-row">
+                        <div class="col-md-3 create-city-submit" onclick="createCitySubmit()">
+                            Create
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Countries -->
+            <div class="col-md-10 admin-dashboard-main admin-dashboard-main-all-countries  list-common common-admin-main" style="display: none;">
+
+            </div>
+
+            <!-- All Contact -->
+            <div class="col-md-10 admin-dashboard-main admin-dashboard-main-all-contacts list-common common-admin-main" style="display: none;">
+
+            </div>
+
+            <!-- Contact Details -->
+            <div class="col-md-10 admin-dashboard-main show-contact-details common-admin-main" style="display: none;">
+                <div class="row">
+                   <div class="col-md-12">
+                      <h3>The Contact Details</h3>
+                   </div>
+                </div>
+                <div class="contact-details-content">
+                  <div class="row">
+                      <div class="col-md-3">
+                          Name:
+                      </div>
+                      <div class="col-md-9 contact-name contact-info">
+
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                          Phone:
+                      </div>
+                      <div class="col-md-9 contact-phone contact-info">
+
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                          Email:
+                      </div>
+                      <div class="col-md-9 contact-email contact-info">
+
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                          Message:
+                      </div>
+                      <div class="col-md-9 contact-message contact-info">
+
+                      </div>
+                  </div>
+                </div>
+            </div>
+
+            <!-- Event Form -->
+            <div class="col-md-10 admin-dashboard-main user-main-dashboard-create-event-form common-user-main common-admin-main" style="display: none;">
+              <div class="row" style="height: 80px;">
+                  <div class="alert-class" style="display", "none">
+
+                  </div>
+              </div>
+                <div class="event-details-common">
+                    <div class="row individualDetails">
+                      <div class="col-md-3 eventField">
+                        Event Name:
+                      </div>
+                      <div class="col-md-9">
+                        <input type="text" class="name inputUser nameInput" name="name" />
+                        <p id="nameUser" class="individualEventUser namePara"></p>
+                      </div>
+                    </div>
+                    <div class="row individualDetails">
+                      <div class="col-md-3 eventField">
+                        Venue:
+                      </div>
+                      <div class="col-md-9">
+                        <input type="text" class="venue inputUser venueInput" name="venue" />
+                        <p id="venueUser" class="individualEventUser venuePara"></p>
+                      </div>
+                    </div>
+                    <div class="row individualDetails">
+                      <div class="col-md-3 eventField">
+                        Date and Time:
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" class="date inputUser dateInput" id="datepicker">
+                        <p id="dateUser" class="individualEventUser datePara"></p>
+                      </div>
+                      <div class="col-md-3">
+                        <input type="time" class="time inputUser timeInput" id="eventTime" value="22:15:00">
+                        <p id="timeUser" class="individualEventUser timePara"></p>
+                      </div>
+                    </div>
+                    <div class="row individualDetails">
+                      <div class="col-md-3 eventField">
+                        Address:
+                      </div>
+                      <div class="col-md-9">
+                        <input type="text inputUser" class="address inputUser addressInput" name="address" />
+                        <p id="addressUser" class="individualEventUser addressPara"></p>
+                      </div>
+                    </div>
+                    <div class="row individualDetails">
+                      <div class="col-md-3 eventField">
+                        Ticket Price:
+                      </div>
+                      <div class="col-md-9">
+                        <input type="text" class="price inputUser priceInput" name="price" />
+                        <p id="priceUser" class="individualEventUser pricePara"></p>
+                      </div>
+                    </div>
+                    <div class="row individualDetails">
+                      <div class="col-md-3 eventField">
+                        Details:
+                      </div>
+                      <div class="col-md-9">
+                        <input type="text" class="details inputUser detailsInput" name="details" />
+                        <p id="detailsUser" class="individualEventUser detailsPara"></p>
+                      </div>
+                    </div>
+                    <div class="col-lg-9 col-lg-offset-3 inputUser input-user-submit">
+                       <button class="btn btn-primary create-event-bottom-submit">Create</button>
+                    </div>
+                    <div class="row editDelete">
+                        <div onclick="displayEditEventView()" class="col-md-6 pull-left crud-button crud-edit">
+                            EDIT
+                        </div>
+                        <div onclick="deleteEvent()" class="col-md-6 pull-right crud-button crud-delete">
+                            DELETE
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Details -->
+            <div class="col-md-10 admin-dashboard-main show-user-details common-admin-main" style="display: none;">
+                <div class="row">
+                    <div class="col-md-3">
+                        Name:
+                    </div>
+                    <div class="col-md-9 first-name-admin">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        Surname:
+                    </div>
+                    <div class="col-md-9 last-name-admin">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        Email:
+                    </div>
+                    <div class="col-md-9 email-admin">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        Type:
+                    </div>
+                    <div class="col-md-9 type-admin">
+
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+var allFunctions = {
+  getUser: getUser,
+  getAllEventsUi: getAllEvents,
+  getAllContactsUi: getAllContacts,
+  getAllCities: getAllCities,
+  getUserForId: getUserForId
+};
+
+var adminjsFunctions = {
+  getAllCitiesReturnRawData: getAllCitiesReturnRawData
+};
+
+function getUser() {
+  var id = "{{ user.id }}";
+  var role = "{{ user.role }}";
+  var firstName = "{{ user.firstName }}";
+  var lastName = "{{ user.lastName }}";
+  var email = "{{ user.email }}";
+  console.log("User::Document " + id);
+
+  var user = {
+    id: id,
+    role: role,
+    firstName: firstName,
+    lastName: lastName,
+    email: email
+  };
+  return user;
+}
+
+    $(document).ready (function() {
+      var accessToken = "{{ accessToken }}";
+      localStorage.accessToken = accessToken;
+      var resultedAccessToken = localStorage.accessToken;
+      // localStorage.removeItem("accessToken");
+      console.log("accessTokenNow:: " + resultedAccessToken);
+      var user = "{{user}}";
+      console.log("User::Document::2 " + user);
+    });
+
+    function getUserForId(userId) {
+      var getUserForIdUrl = "/user/" + userId + "/getUserForId";
+      var accessToken = "{{ accessToken }}";
+      var key = "JWT " + accessToken;
+      $.ajax({
+        url: getUserForIdUrl,
+        method: "GET",
+        headers: {authorization: key},
+        success: function(userDetails) {
+          var user = {
+            id: userDetails.id,
+            role: userDetails.role,
+            firstName: userDetails.firstName,
+            lastName: userDetails.lastName,
+            email: userDetails.email
+          };
+          console.log("Success::UserNow:: " + userDetails);
+          return user;
+        },
+        error: function(error) {
+          return error;
+        }
+      });
+    }
+
+    function getAllEvents() {
+        var getAllEventsUrl = "/event/getAllEvents";
+        var accessToken = "{{ accessToken }}";
+        var key = "JWT " + accessToken;
+        $.ajax({
+            url: getAllEventsUrl,
+            method: "GET",
+            headers: {authorization: key},
+            success: function(allEvents) {
+                console.log("EventsForId:: " + allEvents.length);
+                $(".list-sidemenu").css("background-color", "#e8ebef");
+                $(".admin-sidemenu-event").css("background-color", "white");
+                $(".user-event-list-all").html("");
+                var eventListForAllHtml = "";
+                for(i=0; i<allEvents.length; i++) {
+                  eventListForAllHtml = '<div class="row user-list">' +
+                                            '<div class="col-md-8 event-name-in-list-all">' +
+                                               allEvents[i].name +
+                                            '</div>' +
+                                            '<div onclick="showEventDetails(\'' + allEvents[i].id + '\')" class="col-md-2 show-deleteOrJoin-common show-common">' +
+                                               'Show' +
+                                            '</div>' +
+                                            '<div onclick="commentOnEvent(\'' + allEvents[i].id + '\')" class="col-md-2 show-deleteOrJoin-common deleteOrJoin-common">' +
+                                               'Comment' +
+                                            '</div>' +
+                                        '</div>';
+                  $(".user-event-list-all").append(eventListForAllHtml);
+                }
+                $(".common-admin-main").css("display", "none");
+                $(".user-event-list-all").css("display", "block");
+            },
+            error: function(err) {
+                console.log("Error:: " + err.message);
+            }
+        });
+    }
+
+    function getAllCities() {
+      var getAllCitiesUrl = "/city/getAllCities";
+      $(".common-admin-main").css("display", "none");
+      $(".admin-dashboard-main-all-cities").css("display", "block");
+      $(".list-sidemenu").css("background-color", "#e8ebef");
+      $(".admin-sidemenu-cities").css("background-color", "white");
+      var accessToken = localStorage.accessToken;
+      var key = "JWT " + accessToken;
+      $(".city-list").html("");
+      $.ajax({
+        url: getAllCitiesUrl,
+        method: "GET",
+        headers: {authorization: key},
+        success: function(responseCities) {
+          console.log("responseCities:: " + responseCities[1].city);
+          var allCitiesListHtml = "";
+          for(i=0; i<responseCities.length; i++) {
+            allCitiesListHtml = '<div class="row city-list-content">' +
+                                                  '<div class="col-md-4 all-cities-list-city list-city-common">' +
+                                                     responseCities[i].city +
+                                                  '</div>' +
+                                                  '<div class="col-md-4 all-cities-list-country list-city-common">' +
+                                                     responseCities[i].country +
+                                                  '</div>' +
+                                                  '<div class="col-md-4 delete-city-bottom" onclick="deleteCity(\'' + responseCities[i].id + '\')">' +
+                                                      "DELETE"+
+                                                  '</div>' +
+                                              '</div>';
+            $(".city-list").append(allCitiesListHtml);
+          }
+        },
+        error: function(error) {
+          console.log("responseCities::Error " + error);
+        }
+      });
+    }
+
+    function getAllContacts() {
+      var getAllContactsUrl = "/contact/getAllContacts";
+      var accessToken = localStorage.accessToken;
+      var key = "JWT " + accessToken;
+      $.ajax({
+        url: getAllContactsUrl,
+        method: "GET",
+        headers: {authorization: key},
+        success: function (contacts) {
+          console.log("All Contacts:: " + contacts);
+          $(".list-sidemenu").css("background-color", "#e8ebef");
+          $(".admin-sidemenu-contact").css("background-color", "white");
+          $(".admin-dashboard-main-all-contacts").html("");
+          var contactListForAllHtml = "";
+          for(i=0; i<contacts.length; i++) {
+            contactListForAllHtml = '<div class="row user-list">' +
+                                      '<div class="col-md-8 event-name-in-list-all">' +
+                                         contacts[i].name +
+                                      '</div>' +
+                                      '<div onclick="showContactDetails(\'' + contacts[i].id + '\')" class="col-md-2 show-deleteOrJoin-common show-common">' +
+                                         'Show' +
+                                      '</div>' +
+                                      '<div onclick="deleteContact(\'' + contacts[i].id + '\')" class="col-md-2 show-deleteOrJoin-common deleteOrJoin-common">' +
+                                         'Delete' +
+                                      '</div>' +
+                                  '</div>';
+            $(".admin-dashboard-main-all-contacts").append(contactListForAllHtml);
+          }
+          $(".common-admin-main").css("display", "none");
+          $(".admin-dashboard-main-all-contacts").css("display", "block");
+        },
+        error: function (error) {
+          console.log("Error Contacts:: " + error);
+        }
+      });
+
+    }
+
+function showAllUsers() {
+  console.log("Here now");
+  var accessToken = "{{ accessToken }}";
+    var url = "/user/showAllUsers";
+    var key = "JWT " + accessToken;
+    $.ajax({
+        url: url,
+        method: "GET",
+        headers: {authorization: key},
+        success: function(users) {
+            $(".list-sidemenu").css("background-color", "#e8ebef");
+            $(".admin-sidemenu-user").css("background-color", "white");
+            $(".common-admin-main").css("display", "none");
+            $(".admin-dashboard-main-all-user").css("display", "block");
+            var userList = $(".admin-dashboard-main-all-user");
+            var userListHtml = "";
+            for(i=0; i<users.length; i++) {
+              console.log("Message:: " + users[i].firstName);
+              var firstName = users[i].firstName;
+              var lastName = users[i].lastName;
+              userListHtml = '<div class="row user-list">' +
+                                '<div class="col-md-8 user-list-individual">' +
+                                   firstName + " " +
+                                   lastName +
+                                '</div>' +
+                                '<div onclick="showUserDetails(\'' + users[i].id + '\')" class="col-md-2 show showDelete">' +
+                                   'Show' +
+                                '</div>' +
+                                '<div class="col-md-2 delete showDelete">' +
+                                   'Delete' +
+                                '</div>' +
+                            '</div>';
+              userList.append(userListHtml);
+            }
+
+        },
+        error: function(error) {
+            console.dir("Message2:: " + error);
+        }
+    });
+}
+
+</script>
+
+<script src="/js/admin.js"></script>
