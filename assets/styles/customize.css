@@ -27,6 +27,21 @@ div {
   margin: 0px;
 }
 
+.form-horizontal .form-group {
+     margin-right: 0px;
+     margin-left: 0px;
+}
+
+.input-signup {
+  border-radius: 0px !important;
+}
+
+.select-type {
+  background-color: white;
+  height: 34px;
+  width: 100%;
+}
+
 .red {
   /*border: 1px solid red;*/
   /*border: 1px solid green;*/
@@ -167,6 +182,19 @@ div {
     margin-left: 0%;
     width: 100%;
   }
+}
+@media (min-width: 769px) {
+  .signup-botton {
+    /*margin-left: 25%;*/
+  }
+}
+
+.signup-botton {
+  text-align: center;
+}
+
+.custom-nav {
+  background-color: #191c28;
 }
 
 .dropdown-city {
@@ -392,8 +420,9 @@ div {
 }
 
 .filter-common {
+  border: 3px solid blue;
   width: 80%;
-  height: 25px;
+  height: 35px;
   background-color: white;
 }
 
@@ -411,6 +440,16 @@ div {
   width: 100%;
   padding: 0px;
   padding-bottom: 15px;
+}
+
+.Search {
+  width: 23px;
+  height: 24px;
+  object-fit: contain;
+  font-family: FontAwesome;
+  font-size: 24px;
+  text-align: right;
+  color: #ffffff;
 }
 
 .like-show {

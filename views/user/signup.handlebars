@@ -2,25 +2,25 @@
    <div class="form-group">
       <label class="col-lg-3 control-label">First Name</label>
       <div class="col-lg-5">
-         <input type="text" class="form-control" id="name" name="firstName" />
+         <input type="text" class="form-control input-signup" id="name" name="firstName" />
       </div>
    </div>
    <div class="form-group">
       <label class="col-lg-3 control-label">Last Name</label>
       <div class="col-lg-5">
-         <input type="text" class="form-control" name="lastName" />
+         <input type="text" class="form-control input-signup" name="lastName" />
       </div>
    </div>
    <div class="form-group">
       <label class="col-lg-3 control-label">Email address</label>
       <div class="col-lg-5">
-         <input type="text" class="form-control" name="email" />
+         <input type="text" class="form-control input-signup" name="email" />
       </div>
    </div>
    <div class="form-group">
       <label class="col-lg-3 control-label">Type</label>
       <div class="col-lg-5">
-        <select name="type">
+        <select name="type" class="select-type">
            <option value="user">User</option>
            <option value="owner">Owner</option>
         </select>
@@ -29,23 +29,23 @@
    <div class="form-group">
       <label class="col-lg-3 control-label">Password</label>
       <div class="col-lg-5">
-         <input type="password" class="form-control" name="password" />
+         <input type="password" class="form-control input-signup" name="password" />
       </div>
    </div>
    <div class="form-group">
       <label class="col-lg-3 control-label">Retype password</label>
       <div class="col-lg-5">
-         <input type="password" class="form-control" name="confirmPassword" />
+         <input type="password" class="form-control input-signup" name="confirmPassword" />
       </div>
    </div>
    <div class="form-group">
       <label class="col-lg-3 control-label" id="captchaOperation"></label>
-      <div class="col-lg-2">
-         <input type="text" class="form-control" name="captcha" />
+      <div class="col-lg-5">
+         <input type="text" class="form-control input-signup" name="captcha" />
       </div>
    </div>
    <div class="form-group">
-      <div class="col-lg-9 col-lg-offset-3">
+      <div class="col-lg-9 signup-botton">
          <button type="submit" class="btn btn-primary">Sign up</button>
       </div>
    </div>
@@ -84,8 +84,8 @@
                 </div>
              </div>
              <div class="form-group">
-                <div class="col-lg-9 col-lg-offset-3">
-                   <button type="submit" class="btn btn-primary">Sign In</button>
+                <div class="col-lg-9 col-lg-offset-3" style="text-align: center;">
+                   <button type="submit" class="btn btn-primary" style="border-radius: 0px;">Sign In</button>
                 </div>
              </div>
              <input type="hidden" name="_csrf" value="{{ _csrf }}"/>
@@ -103,12 +103,8 @@
 
 </div>
 
-<div  onclick="hello()">Hi</div>
+<!-- <div  onclick="hello()">Hi</div> -->
 
 <script>
-    function hello() {
-        // var formData = new FormData();
-        var formData = $("#name").val();
-        console.dir("Data:: " + formData);
-    }
+    
 </script>

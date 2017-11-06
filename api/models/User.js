@@ -76,7 +76,8 @@ module.exports = {
   getUserForId: getUserForId,
   loginUser: loginUser,
   comparePassword: comparePassword,
-  getAllUsers: getAllUsers
+  getAllUsers: getAllUsers,
+  getUserForEmail: getUserForEmail
   // createNewRegistration: createNewRegistration,
   // createNewUser: createNewUser,
 };
@@ -105,11 +106,11 @@ function registerUser(userData) {
         // create new user
         // check for role
       })
-      .then(function(role) {
+      .then(function(newUser) {
 
         return User.create(newUser);
       })
-      .then(function (user) {
+      .spread(function (user) {
         // create new profile
         // console.log("createdUser:: " + JSON.stringify(user));
         return resolve(user);
@@ -156,6 +157,46 @@ function getUserForId(userId) {
       id: userId
     };
     console.log("userId : " + userId);
+    User
+      .findOne(criteria)
+      .then(function (user) {
+        if (!user) {
+          return reject({
+            code: 404,
+            message: 'USER_NOT_FOUND'
+          });
+        } else {
+          console.log("Success::Model : " + user.firstName);
+          // convert the user
+          return resolve(user);
+        }
+      })
+      .catch(function (err) {
+        // caught the error
+        sails.log.error('User#getUserForId :: Error in query :: ', err);
+
+        return reject({
+          code: 500,
+          message: 'INTERNAL_SERVER_ERROR'
+        });
+      });
+  });
+}
+
+function getUserForEmail(email) {
+  return Q.promise(function (resolve, reject) {
+    if (!email) {
+      sails.log.error('User#getUserForemail :: email id is null');
+      return reject({
+        code: 400,
+        message: 'USER_INVALID_REQUEST'
+      });
+    }
+    // criteria to load active user
+    var criteria = {
+      email: email
+    };
+    console.log("userId : " + email);
     User
       .findOne(criteria)
       .then(function (user) {

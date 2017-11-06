@@ -17,7 +17,10 @@ module.exports.models = {
   * connections (see `config/connections.js`)                                *
   *                                                                          *
   ***************************************************************************/
-  connection: 'mongoConnectionDBDev',
+    models: {
+   connection: 'mongoConnectionDev'
+   },
+  port: 1337,
 
   /***************************************************************************
   *                                                                          *

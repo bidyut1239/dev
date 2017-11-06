@@ -274,9 +274,9 @@ var allFunctions = {
   getUserForId: getUserForId
 };
 
-var adminjsFunctions = {
-  getAllCitiesReturnRawData: getAllCitiesReturnRawData
-};
+// var adminjsFunctions = {
+//   getAllCitiesReturnRawData: getAllCitiesReturnRawData
+// };
 
 function getUser() {
   var id = "{{ user.id }}";
@@ -339,7 +339,8 @@ function getUser() {
             url: getAllEventsUrl,
             method: "GET",
             headers: {authorization: key},
-            success: function(allEvents) {
+            success: function(allEventsfull) {
+                var allEvents = allEventsfull.allEvents;
                 console.log("EventsForId:: " + allEvents.length);
                 $(".list-sidemenu").css("background-color", "#e8ebef");
                 $(".admin-sidemenu-event").css("background-color", "white");
@@ -382,7 +383,7 @@ function getUser() {
         method: "GET",
         headers: {authorization: key},
         success: function(responseCities) {
-          console.log("responseCities:: " + responseCities[1].city);
+          // console.log("responseCities:: " + responseCities[1].city);
           var allCitiesListHtml = "";
           for(i=0; i<responseCities.length; i++) {
             allCitiesListHtml = '<div class="row city-list-content">' +
@@ -458,7 +459,9 @@ function showAllUsers() {
             $(".common-admin-main").css("display", "none");
             $(".admin-dashboard-main-all-user").css("display", "block");
             var userList = $(".admin-dashboard-main-all-user");
+            userList.html("");
             var userListHtml = "";
+            var got = 0;
             for(i=0; i<users.length; i++) {
               console.log("Message:: " + users[i].firstName);
               var firstName = users[i].firstName;

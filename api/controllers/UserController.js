@@ -120,6 +120,7 @@ function getProfileAction(req, res) {
 			user: user,
 			layout: "dashBoard"
 		};
+		console.log("UserId::getProfileAction::Controller" + user.id);
 		res.view("user/profile", viewResponse);
 		})
 		.catch(function (err) {
@@ -149,14 +150,13 @@ function logoutUserAction(req, res) {
 function loginUserAction(req, res) {
     var loginData = req.params.all();
 		var email = loginData.email;
-		var passPlain = loginData.passPlain;
+		var passPlain = loginData.password;
 		var password = loginData.password;
 		var privateKey = "DX8RmPnJI0z0heE0Pgz2i76zI0O3gfq_EK_D2jEuyvmz6XTreyrv8eD0OJ5kAMaR";
-		console.log("Here Login:: " + JSON.stringify(req.params.all()));
-		User.findOne({
-				email: email
-		})
+		User
+			.getUserForEmail(email)
 			.then(function (user){
+				console.log("Here Login:: " + email);
 					if(!user) {
 						res.status(401).json({message: "Sorry, User not found"});
 					}
