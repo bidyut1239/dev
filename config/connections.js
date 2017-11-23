@@ -6,10 +6,10 @@ module.exports.connections = {
 
   mongoConnectionDBDev: {
      adapter: 'sails-mongo',
-     host: '18.216.62.223',
+     host: 'localhost',
      port: 27017,
-     user: 'password',
-     password: 'qwerty123',
+     user: '',
+     password: '',
      database: 'dev'
    }
 

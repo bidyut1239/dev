@@ -152,6 +152,7 @@ function loginUserAction(req, res) {
 		var email = loginData.email;
 		var passPlain = loginData.password;
 		var password = loginData.password;
+		console.log("loginUserAction::Controller " + email);
 		var privateKey = "DX8RmPnJI0z0heE0Pgz2i76zI0O3gfq_EK_D2jEuyvmz6XTreyrv8eD0OJ5kAMaR";
 		User
 			.getUserForEmail(email)

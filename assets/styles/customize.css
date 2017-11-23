@@ -1,6 +1,65 @@
 
 body {
-  background-color: #e8ebef;
+  /*background-color: #e8ebef;*/
+}
+
+.container-wrapper-private {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 1px solid black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.personal-info {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.head-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-summary {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.row-summary-line {
+  width: 100%;
+  display: -webkit-inline-box;
+}
+
+.circle-dot {
+  width: 5px;
+  height: 5px;
+  background: black;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+
+.circle-dot-tp {
+  width: 3%;
+}
+
+.raw-content {
+  width: 97%;
+}
+
+.emp-dtls {
+  text-align: center;
+  background-color: #DADADA;
+}
+
+@media (max-width: 414px) {
+  .circle-dot-tp {
+    width: 7%;
+  }
+  .raw-content {
+    width: 93%;
+  }
 }
 
 .common-user-main {

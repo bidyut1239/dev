@@ -105,15 +105,21 @@ function registerUser(userData) {
         // create profile for the user
         // create new user
         // check for role
+        return newUser;
       })
-      .then(function(newUser) {
-
-        return User.create(newUser);
-      })
-      .spread(function (user) {
-        // create new profile
-        // console.log("createdUser:: " + JSON.stringify(user));
-        return resolve(user);
+      .spread(function(newUser) {
+        console.log("Entering:: ::=+++++++++++++++++++++ " + newUser);
+        User
+          .create(newUser)
+          .then(function(user) {
+            return resolve(user);
+          })
+          .catch(function(err) {
+            var err = {
+              message : "User not created"
+            };
+            return reject(err);
+          });
       })
       .catch(function (err) {
         sails.log.error('User#createNewUserV2 :: Error while creating a new user :: ', err);
@@ -231,6 +237,7 @@ function loginUser(email, passPlain) {
         User
           .findOne(criteria)
           .then(function (user) {
+            console.log("User::FirstName " + user.firstName);
             if (!user) {
               return reject({
                 code: 404,

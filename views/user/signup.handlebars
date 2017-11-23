@@ -1,110 +1,274 @@
-<form id="defaultForm" action="/user/register" method="post" class="form-horizontal" style="height: 794px; padding-top: 147px; overflow-x: hidden;">
-   <div class="form-group">
-      <label class="col-lg-3 control-label">First Name</label>
-      <div class="col-lg-5">
-         <input type="text" class="form-control input-signup" id="name" name="firstName" />
-      </div>
-   </div>
-   <div class="form-group">
-      <label class="col-lg-3 control-label">Last Name</label>
-      <div class="col-lg-5">
-         <input type="text" class="form-control input-signup" name="lastName" />
-      </div>
-   </div>
-   <div class="form-group">
-      <label class="col-lg-3 control-label">Email address</label>
-      <div class="col-lg-5">
-         <input type="text" class="form-control input-signup" name="email" />
-      </div>
-   </div>
-   <div class="form-group">
-      <label class="col-lg-3 control-label">Type</label>
-      <div class="col-lg-5">
-        <select name="type" class="select-type">
-           <option value="user">User</option>
-           <option value="owner">Owner</option>
-        </select>
-      </div>
-   </div>
-   <div class="form-group">
-      <label class="col-lg-3 control-label">Password</label>
-      <div class="col-lg-5">
-         <input type="password" class="form-control input-signup" name="password" />
-      </div>
-   </div>
-   <div class="form-group">
-      <label class="col-lg-3 control-label">Retype password</label>
-      <div class="col-lg-5">
-         <input type="password" class="form-control input-signup" name="confirmPassword" />
-      </div>
-   </div>
-   <div class="form-group">
-      <label class="col-lg-3 control-label" id="captchaOperation"></label>
-      <div class="col-lg-5">
-         <input type="text" class="form-control input-signup" name="captcha" />
-      </div>
-   </div>
-   <div class="form-group">
-      <div class="col-lg-9 signup-botton">
-         <button type="submit" class="btn btn-primary">Sign up</button>
-      </div>
-   </div>
-   <input type="hidden" name="_csrf" value="{{ _csrf }}"/>
 
-   <!-- <input type="hidden" name="_csrf" value="{{ _csrfToken }}"/> -->
-</form>
-
-<div class="container">
-  <!--<h2>Modal Example</h2>-->
-  <!-- Trigger the modal with a button -->
-  <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <form id="defaultLoginForm" action="/user/login" method="post" class="form-horizontal" style="height: 300px; padding-top: 50px; overflow-x: hidden;">
-             <div class="form-group">
-                <label class="col-lg-3 control-label">Email</label>
-                <div class="col-lg-5">
-                   <input type="text" class="form-control" name="email" />
-                </div>
-             </div>
-             <div class="form-group">
-                <label class="col-lg-3 control-label">Password</label>
-                <div class="col-lg-5">
-                   <input type="password" class="form-control" name="password" />
-                </div>
-             </div>
-             <div class="form-group">
-                <div class="col-lg-9 col-lg-offset-3" style="text-align: center;">
-                   <button type="submit" class="btn btn-primary" style="border-radius: 0px;">Sign In</button>
-                </div>
-             </div>
-             <input type="hidden" name="_csrf" value="{{ _csrf }}"/>
-
-             <!-- <input type="hidden" name="_csrf" value="{{ _csrfToken }}"/> -->
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+<div class="container-wrapper-private">
+    <div class="personal-info">
+      <div class="row">
+          <b style="font-size: 17px;">
+            BIDYUT JYOTI TALUKDAR
+          </b>
       </div>
-
+      <div class="row">
+          <p style="font-size: 12px; margin-top: -3px;">
+            Contact Number: +91 9148313601
+          </p>
+      </div>
+      <div class="row" style="font-size: 12px; margin-top: -11px;">
+          <p>
+            Email ID: bidyut230@gmail.com
+          </p>
+      </div>
     </div>
-  </div>
+    <div class="head-info">
+        <div class="row">
+            <b style="font-size: 18px;">Member of Technical Staff</b>
+        </div>
+        <div class="row">
+            Web Application Development, Extract Transform Load
+        </div>
+    </div>
+    <div class="profile-summary" style="margin-top: 20px;">
+        <div class="row">
+            <b style="font-size: 14px;">Profile summary</b>
+        </div>
+        <div class="row" style="margin-top: -20px;">
+           <hr style="border: 1px solid #989898;"></hr>
+        </div>
+        <div class="profile-summary-content">
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
 
+                  </div>
+                </div>
+                <div class="raw-content">
+                  Experienced in working in back-end, building and securing api,
+                   mvc, route-view mapping
+                </div>
+            </div>
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
+
+                  </div>
+                </div>
+                <div class="raw-content">
+                  Experienced in working in front-end, creating web pages from
+                   scratch, UI Design, front-end functionality,pages responsiveness.
+                </div>
+            </div>
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
+
+                  </div>
+                </div>
+                <div class="raw-content">
+                  Database Architect and design.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-summary" style="margin-top: 15px;">
+        <div class="row">
+            <b style="font-size: 14px;">Employment Details</b>
+        </div>
+        <div class="row" style="margin-top: -20px;">
+           <hr style="border: 1px solid #989898;"></hr>
+        </div>
+        <div class="emp-dtls">
+            <div class="row">
+                <b>May' 16 till date with Nineleaps Technology Solution.</b>
+            </div>
+            <div class="row">
+                Worked in building application(E-Learning) from scratch.
+            </div>
+        </div>
+    </div>
+    <div class="profile-summary" style="margin-top: 15px;">
+        <div class="row">
+            <b style="font-size: 14px;">Key Result Areas</b>
+        </div>
+        <!-- <div class="row" style="margin-top: -20px;">
+           <hr style="border: 1px solid #989898;"></hr>
+        </div> -->
+        <div class="profile-summary-content" style="margin-top: 10px;">
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
+
+                  </div>
+                </div>
+                <div class="raw-content">
+                  Providing initiative for building the project.
+                </div>
+            </div>
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
+
+                  </div>
+                </div>
+                <div class="raw-content">
+                  Guided and helped freshers in learning and building application.
+                </div>
+            </div>
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
+
+                  </div>
+                </div>
+                <div class="raw-content">
+                  Provided some good estimates to the Business Analyst so to plan properly.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-summary" style="margin-top: 15px;">
+
+        <div class="emp-dtls">
+            <div class="row">
+                <b>Sep' 15 - Feb' 16 SSN Logistics</b>
+            </div>
+            <div class="row">
+                Worked as an Industrial Engineer
+            </div>
+        </div>
+    </div>
+    <div class="profile-summary" style="margin-top: 15px;">
+        <div class="row">
+            <b style="font-size: 14px;">Key Result Areas</b>
+        </div>
+        <!-- <div class="row" style="margin-top: -20px;">
+           <hr style="border: 1px solid #989898;"></hr>
+        </div> -->
+        <div class="profile-summary-content" style="margin-top: 10px;">
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
+
+                  </div>
+                </div>
+                <div class="raw-content">
+                  Worked in optimizing the flow of the packages in operations.
+                </div>
+            </div>
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
+
+                  </div>
+                </div>
+                <div class="raw-content">
+                  Worked in identifying bottlenecks in the logistics process.
+                </div>
+            </div>
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
+
+                  </div>
+                </div>
+                <div class="raw-content">
+                  Identify the old packages in the processing center and prioritized
+                  them to ship fast.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-summary" style="margin-top: 15px;">
+
+        <div class="emp-dtls">
+            <div class="row">
+                <b>June' 15 - Aug' 15 Jindal Steel and Power Limited</b>
+            </div>
+            <div class="row">
+                Worked as a Mining Engineer
+            </div>
+        </div>
+    </div>
+    <div class="profile-summary" style="margin-top: 15px;">
+        <div class="row">
+            <b style="font-size: 14px;">Key Result Areas</b>
+        </div>
+        <!-- <div class="row" style="margin-top: -20px;">
+           <hr style="border: 1px solid #989898;"></hr>
+        </div> -->
+        <div class="profile-summary-content" style="margin-top: 10px;">
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
+
+                  </div>
+                </div>
+                <div class="raw-content">
+                  Worked in operations and understood the flow and how things worked
+                  in field.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-summary" style="margin-top: 15px;">
+        <div class="row">
+            <b style="font-size: 14px;">Technical Skills</b>
+        </div>
+        <div class="row" style="margin-top: -20px;">
+           <hr style="border: 1px solid #989898;"></hr>
+        </div>
+        <div class="tech-skills" style="margin-top: -10px;">
+            <div class="row">
+                <b>Language:</b> Javascript, NodeJs
+            </div>
+            <div class="row">
+                <b>Framework:</b> Sails
+            </div>
+            <div class="row">
+                <b>Database:</b> Mongodb
+            </div>
+            <div class="row">
+                <b>Platform:</b> Ubuntu(14.04)
+            </div>
+            <div class="row">
+                <b>Basic:</b> Data Structure and Algorithm
+            </div>
+            <div class="row">
+                <b>Others:</b> Ansys, Autocad
+            </div>
+        </div>
+    </div>
+    <div class="profile-summary" style="margin-top: 15px; margin-bottom: 15px;">
+        <div class="row">
+            <b style="font-size: 14px;">Education</b>
+        </div>
+        <div class="row" style="margin-top: -20px;">
+           <hr style="border: 1px solid #989898;"></hr>
+        </div>
+        <div class="profile-summary-content" style="margin-top: -10px;">
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
+
+                  </div>
+                </div>
+                <div class="raw-content">
+                  Graduation: From Indian Institute of Technology Kharagpur
+                  (B.Tech+M.Tech Dual Degree) in Mining Engineering 2010-2015 with CGPA 7.08/10
+                </div>
+            </div>
+            <div class="row row-summary-line">
+                <div class="circle-dot-tp">
+                  <div class="circle-dot">
+
+                  </div>
+                </div>
+                <div class="raw-content">
+                  12th: From Shishupatshala in 2009 with 79.8%(Assam State Board)
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
 <!-- <div  onclick="hello()">Hi</div> -->
 
 <script>
-    
+
 </script>
