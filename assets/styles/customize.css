@@ -3,18 +3,77 @@ body {
   /*background-color: #e8ebef;*/
 }
 
-.container-wrapper-private {
+.header-nav {
+  height: 50px;
+  background-color: #000c21;
+  display: -webkit-box;
+}
+
+.my-info-1 {
+  width: 50%;
+  color: white;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.insd-info {
+  padding-left: 10px;
+}
+
+.footer-nav {
+  background-color:#2E213C;
+}
+
+.image-class {
+  text-align: right;
+  width: 50%;
+  margin-top: 5px;
+  padding-right: 10px;
+}
+
+.img-tag {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  /*padding-right: 10px;*/
+}
+
+.lnkn-link, .ft-cpryt {
+  text-align: center;
+}
+
+.link-raw-ln, .img-ln {
+  width: 40px;
+  height: 40px;
+}
+
+.wrapper-info, .container-wrapper-private {
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  border: 1px solid black;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.container-wrapper-private {
+  border: 1px solid black;
+  margin-top: 50px;
 }
 
 .personal-info {
   margin-left: 10px;
   margin-top: 10px;
+}
+
+.info-details {
+  background-color: #E0E0E0;
+  padding: 30px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.show-more-less {
+  color: grey;
 }
 
 .head-info {

@@ -1,3 +1,13 @@
+<div class="row header-nav">
+    <div class="my-info-1">
+        <div class="insd-info">
+            My Info
+        </div>
+    </div>
+    <div class="image-class">
+        <img class="img-tag" src="/images/pic.jpg">
+    </div>
+</div>
 
 <div class="container-wrapper-private">
     <div class="personal-info">
@@ -52,7 +62,7 @@
                 </div>
                 <div class="raw-content">
                   Experienced in working in front-end, creating web pages from
-                   scratch, UI Design, front-end functionality,pages responsiveness.
+                   scratch, UI Design, front-end functionality,page responsiveness.
                 </div>
             </div>
             <div class="row row-summary-line">
@@ -267,8 +277,58 @@
         </div>
     </div>
 </div>
+<div class="wrapper-info">
+    <div class="row">
+        <div class="show-more-less hidden-cls">
+                Show Details Information
+        </div>
+    </div>
+    <div class="row" style="height: 15px;">
+
+    </div>
+    <div class="info-details" style="display: none;">
+        Hi myself Bidyut Jyoti Talukdar.My native place is Dhubri Assam.I have
+        completed my 10th and 12th from Dhubri. After that I moved to Kharagpur
+        for graduation.I have completed my graduation from IIT Kharagpur, where
+        i got placed on campus in Jindal Steel and Power Limited as Mining
+        Engineer But I want to be in developer domain so I moved to Bangalore.
+        Here I took a job in SSN Logistics temporarily to meet my expenses.And
+        started with some basics of web.Finally I got a job at Nineleaps
+        Technology Solution.Now I am working in this company.
+    </div>
+</div>
+<div class="row footer-nav">
+    <div class="content-footer" style="margin-bottom: 40px; margin-top: 40px;">
+        <div class="row ft-cpryt">
+            <p style="color: white;">
+                This website carries my basic information
+                Copy Right@Bidyut Jyoti  Taludar
+            </p>
+        </div>
+        <div class="row lnkn-link">
+            <a href="https://www.linkedin.com/in/bidyut-talukdar-416b8531/" class="link-raw-ln">
+                <img class="img-ln" src="/images/linkedin-logo-copy.png" alt="" />
+            </a>
+        </div>
+    </div>
+</div>
 <!-- <div  onclick="hello()">Hi</div> -->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-
+$(document).ready(function(){
+  $(".show-more-less").hover(function(){
+      $(".show-more-less").css("cursor", "pointer");
+  });
+  $(".show-more-less").click(function(){
+      $(".show-more-less").toggleClass("hidden-cls");
+      var isHidden = $(".show-more-less").hasClass("hidden-cls");
+      $(".info-details").slideToggle();
+      if(isHidden) {
+          $(".show-more-less").html("Show Details Information");
+      }
+      else {
+        $(".show-more-less").html("Hide Information");
+      }
+  });
+});
 </script>
